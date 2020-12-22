@@ -7,6 +7,15 @@ import matplotlib.animation as ani
 # %matplotlib qt
 plt.ion()
 
+def animate(i,x_ed,y_ed,limit):
+    for j in range(y_ed+1, limit+1):
+        ax.plot(x_ed+1,j,'bo')        # moving next dilsocation to next line
+    for k in range(0,y_ed+1):
+        ax.plot(x_ed,k,'ro')          # filling white space of first with red
+        ax.plot(x_ed+1,i,'wo')        # replacing next white with red
+    for t in range(y_ed,limit+1):
+        ax.plot(x_ed,t,'ro');
+
 Pair = namedtuple("Pair", ["first", "second"])
 limit = 20
 d={}
